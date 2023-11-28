@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background: #eee;
+    }
+form{
+
+    max-width: 200px;
+    margin: 40px auto;
+    background: white;
+    padding: 10px;
+}
+input{
+    display: block;
+    margin: 10px auto;
+    padding: 4px;
+}
+
+
+
+
+
+</style>
+<body>
+   <form  id="signup-form">
+    <input type="text" id="username" placeholder="username">
+    <input type="submit" value="Submit">
+    <div class="feedback"></div>
+   </form> 
+
+
+
+
+   <script>
+    // forms
+    const feedback = document.querySelector('.feedback');
+     const form = document.querySelector('#signup-form');
+     const username = document.querySelector('#username');
+     form.addEventListener('submit', e => {
+        e.preventDefault();
+    //   console.log(username.value);
+  
+// validation
+const usernames = form.username.value;
+const usernamesPattern = /^[a-zA-Z]{6,12}$/;
+
+if (usernamesPattern.test(usernames)){
+feedback.textContent ='yuppie! Username is valid';
+} else { 
+feedback.textContent = 'OH NO! invalid user name. include only letters with 6 to 12 characters, Good Luck!';
+}
+
+});
+
+    // Regular expresion testing RegEx
+
+// const usernam = 'taiw';
+// const pattern = /^[a-z]{4,}$/;
+
+// let result = pattern.test(usernam);
+// // console.log(result)
+
+// if(result){
+//     console.log('passed');
+// }else{
+// console.log('failed');
+// }
+
+// this will return interger
+// let resulto = username.search(pattern)
+// console.log(resulto);
+
+   </script>
+</body> 
+</html>
